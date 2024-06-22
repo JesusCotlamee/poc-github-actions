@@ -5,7 +5,7 @@ import json
 import requests
 
 ### SCRIPT SAMPLE EXECUTED THROUGH GH WORKFLOW
-print(f"💡 \033[36mScript example: Getting Brazil Covid-19 datas\033[0m")
+print("💡 \033[36mScript example: Getting Brazil Covid-19 datas\033[0m")
 
 try:
   response1 = requests.get("https://covid-api.mmediagroup.fr/v1/cases?country=Brazil", timeout=60)
