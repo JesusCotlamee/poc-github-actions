@@ -1,14 +1,12 @@
 ### PYTHON NATIVE DEPENDENCIES
 import json
-
-### DEPENDENCIES TO IMPORT ON THE GH WORKFLOW
-import requests
+from security import safe_requests
 
 ### SCRIPT SAMPLE EXECUTED THROUGH GH WORKFLOW
 print(f"💡 \033[36mScript example: Getting Brazil Covid-19 datas\033[0m")
 
 try:
-  response1 = requests.get("https://covid-api.mmediagroup.fr/v1/cases?country=Brazil", timeout=60)
+  response1 = safe_requests.get("https://covid-api.mmediagroup.fr/v1/cases?country=Brazil", timeout=60)
 
   country_datas = response1.json()
 
@@ -22,7 +20,7 @@ except:
    print("Couldn't extract Brazil cases datas") 
 
 try:    
-  response2 = requests.get("https://covid-api.mmediagroup.fr/v1/vaccines?country=Brazil", timeout=60)
+  response2 = safe_requests.get("https://covid-api.mmediagroup.fr/v1/vaccines?country=Brazil", timeout=60)
 
   vaccines_datas = response2.json()
 
